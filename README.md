@@ -41,7 +41,9 @@ We provide pre-trained networks and sample images from the test dataset. Please 
 
 To generate virtual try-on images, run:
 
-```python test.py --name [NAME]
+``
+python test.py --name [NAME]
+
 ```
 
 The results are saved in the `./results/` directory. You can change the location by specifying the `--save_dir` argument. To synthesize virtual try-on images with different pairs of a person and a clothing item, edit `./datasets/test_pairs.txt` and run the same command.
