@@ -4,11 +4,6 @@
 
 ![Teaser image](./assets/teaser.png)
 
-> **VITON-HD: High-Resolution Virtual Try-On via Misalignment-Aware Normalization**<br>
-> [Seunghwan Choi](https://github.com/shadow2496)\*<sup>1</sup>, [Sunghyun Park](https://psh01087.github.io)\*<sup>1</sup>, [Minsoo Lee](https://github.com/Minsoo2022)\*<sup>1</sup>, [Jaegul Choo](https://sites.google.com/site/jaegulchoo)<sup>1</sup><br>
-> <sup>1</sup>KAIST<br>
-> In CVPR 2021. (* indicates equal contribution)
-
 > Paper: https://arxiv.org/abs/2103.16874<br>
 > Project page: https://psh01087.github.io/VITON-HD
 
