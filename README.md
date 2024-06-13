@@ -1,6 +1,5 @@
-## VITON-HD &mdash; Official PyTorch Implementation
+## Virtual-Try_ON ; Official PyTorch Implementation
 
-**\*\*\*\*\* New follow-up research by our team is available at https://github.com/rlawjdghek/StableVITON \*\*\*\*\***<br>
 
 
 ![Teaser image](./assets/teaser.png)
@@ -13,28 +12,22 @@
 > Paper: https://arxiv.org/abs/2103.16874<br>
 > Project page: https://psh01087.github.io/VITON-HD
 
-> **Abstract:** *The task of image-based virtual try-on aims to transfer a target clothing item onto the corresponding region of a person, which is commonly tackled by fitting the item to the desired body part and fusing the warped item with the person. While an increasing number of studies have been conducted, the resolution of synthesized images is still limited to low (e.g., 256x192), which acts as the critical limitation against satisfying online consumers. We argue that the limitation stems from several challenges: as the resolution increases, the artifacts in the misaligned areas between the warped clothes and the desired clothing regions become noticeable in the final results; the architectures used in existing methods have low performance in generating high-quality body parts and maintaining the texture sharpness of the clothes. To address the challenges, we propose a novel virtual try-on method called VITON-HD that successfully synthesizes 1024x768 virtual try-on images. Specifically, we first prepare the segmentation map to guide our virtual try-on synthesis, and then roughly fit the target clothing item to a given person's body. Next, we propose ALIgnment-Aware Segment (ALIAS) normalization and ALIAS generator to handle the misaligned areas and preserve the details of 1024x768 inputs. Through rigorous comparison with existing methods, we demonstrate that VITON-HD highly surpasses the baselines in terms of synthesized image quality both qualitatively and quantitatively.*
-
-## Notice
-
-ECCV 2022 paper by our team (follow-up research): https://github.com/sangyun884/HR-VITON
-Preprocessing codes for person-agnostic representation are available at https://github.com/sangyun884/HR-VITON.
+> **Abstract:** Image-based virtual try-on transfers a target clothing item onto a person's corresponding region, typically achieved by fitting the item to the desired body part and fusing it with the person. Despite numerous studies, synthesized images' resolution remains limited (e.g., 256x192), posing a challenge in satisfying online consumers. We identify key challenges: as resolution increases, artifacts in misaligned areas between warped clothes and desired regions become noticeable; existing architectures struggle to generate high-quality body parts and maintain clothing texture sharpness. To overcome these challenges, we introduce VITON-HD, a method synthesizing 1024x768 virtual try-on images. We employ segmentation maps to guide synthesis, roughly fit target clothing to a person's body, and introduce ALIgnment-Aware Segment (ALIAS) normalization and generator to handle misaligned areas and preserve details. Through rigorous comparisons, VITON-HD significantly surpasses baselines in synthesized image quality, both qualitatively and quantitatively.
 
 ## Installation
 
 Clone this repository:
 
 ```
-git clone https://github.com/shadow2496/VITON-HD.git
-cd ./VITON-HD/
+https://github.com/annukumari12122002/virtual-try-on.git
 ```
 
 Install PyTorch and other dependencies:
 
 ```
-conda create -y -n [ENV] python=3.8
-conda activate [ENV]
-conda install -y pytorch=[>=1.6.0] torchvision cudatoolkit=[>=9.2] -c pytorch
+conda create -y -n env python=3.8
+conda activate env
+conda install -y pytorch==1.6.0 torchvision cudatoolkit==9.2 -c pytorch
 pip install opencv-python torchgeometry
 ```
 
@@ -53,8 +46,7 @@ We provide pre-trained networks and sample images from the test dataset. Please 
 
 To generate virtual try-on images, run:
 
-```
-CUDA_VISIBLE_DEVICES=[GPU_ID] python test.py --name [NAME]
+```python test.py --name [NAME]
 ```
 
 The results are saved in the `./results/` directory. You can change the location by specifying the `--save_dir` argument. To synthesize virtual try-on images with different pairs of a person and a clothing item, edit `./datasets/test_pairs.txt` and run the same command.
